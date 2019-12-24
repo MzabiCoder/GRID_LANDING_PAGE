@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/simple-lightbox.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
     <title>LandinPage</title>
 </head>
 
@@ -19,15 +20,17 @@
         <div class="container">
             <h1>Logo</h1>
             <ul class="nav">
-                <li><a href="">Home</a> </li>
-                <li><a href="">About</a> </li>
+                <li><a href="#main">Header</a> </li>
+                <li><a href="#gallery">Gallery</a> </li>
+                <li><a href="#footer">Contacts</a> </li>
+
             </ul>
         </div>
     </nav>
 
-    <div class="section-a">
+    <div class="section-a" id="main">
         <div class="container">
-            <div>
+            <div class="animated swing">
                 <h1>lkasdflkdsajf</h1>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis nostrum voluptate id perspiciatis
                     fuga facilis repellendus quae error rerum! Adipisci.</p>
@@ -39,7 +42,7 @@
         </div>
     </div>
 
-    <div class="section-b">
+    <div class="section-b" id="gallery">
         <div class="overlay"></div>
         <div class="inner">
             <h1>loud & clear</h1>
@@ -81,7 +84,7 @@
         </div>
     </section>
 
-    <footer class="section-footer">
+    <footer class="section-footer animated slideInDown" id="footer">
         <div class="container">
             <div>
                 <h2>lkkjkjkljlk</h2>
@@ -136,6 +139,39 @@
     <script>
         $(() => {
             const $gallery = $('.gallery a').simpleLightbox()
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () { // check if scroll event happened
+                if ($(document).scrollTop() >
+                    50) { // check if user scrolled more than 50 from top of the browser window
+                    $(".navbar").css("background-color",
+                        "black"
+                    ); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+                    $(".navbar").css("color",
+                        "white");
+                    $(".navbar .container ul li a").css("color",
+                        "white")
+                } else {
+                    $(".navbar").css("background-color",
+                        "transparent"); // if not, change it back to transparent
+                    $(".navbar").css("color",
+                        "black");
+                    $(".navbar .container ul li a").css("color",
+                        "black")
+                }
+            });
+        });
+    </script>
+    <script>
+        list = document.querySelectorAll('.nav li')
+
+        list.forEach(el => {
+            el.addEventListener('click', e => {
+
+                console.log(e.target)
+            })
         })
     </script>
 </body>
