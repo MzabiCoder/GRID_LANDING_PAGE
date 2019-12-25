@@ -203,7 +203,27 @@ img {
       color: black;
       font-weight: bold; }
 
+#hamberguer {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+  transition: all .8s ease-in-out;
+  z-index: 6;
+  display: none; }
+  #hamberguer div {
+    width: 40px;
+    height: 4px;
+    background: #585454;
+    margin-bottom: .4rem; }
+  #hamberguer.close {
+    transform: rotate(128deg); }
+    #hamberguer.close div:nth-child(2) {
+      display: none; }
+
 @media (max-width: 700px) {
+  #hamberguer {
+    display: block; }
   .section-a .container {
     grid-template-columns: 1fr;
     text-align: center;
@@ -247,3 +267,45 @@ img {
 .animated {
   animation-delay: 0s;
   animation-duration: 1s; }
+
+#global {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 5;
+  transition: all 1s ease-in-out; }
+  #global .list {
+    list-style: none; }
+    #global .list li {
+      margin-bottom: 2rem; }
+      #global .list li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 2rem;
+        border-bottom: 1px solid white;
+        letter-spacing: 5px;
+        text-transform: capitalize;
+        padding-bottom: .7rem;
+        transition: all .3s ease-in-out; }
+        #global .list li a:hover {
+          background: white;
+          color: black;
+          cursor: pointer;
+          border-bottom: 1px solid black;
+          padding: 1rem; }
+  #global h1 {
+    color: white; }
+  #global.show {
+    visibility: visible; }

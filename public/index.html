@@ -14,9 +14,21 @@
 </head>
 
 <body id="home">
+    <div id="global">
+        <ul class="list">
+            <li><a href="#main">Header</a> </li>
+            <li><a href="#gallery">Gallery</a> </li>
+            <li><a href="#footer">Contacts</a> </li>
 
-
+        </ul>
+    </div>
+    <div id="hamberguer">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <nav class="navbar">
+
         <div class="container">
             <h1>Logo</h1>
             <ul class="nav">
@@ -165,13 +177,35 @@
         });
     </script>
     <script>
-        list = document.querySelectorAll('.nav li')
+        // list = document.querySelectorAll('.nav li')
 
-        list.forEach(el => {
-            el.addEventListener('click', e => {
+        // list.forEach(el => {
+        //     el.addEventListener('click', e => {
 
-                console.log(e.target)
+        //         console.log(e.target)
+        //     })
+        // })
+        list = document.querySelectorAll('.list li')
+        menuBtb = document.querySelector('#hamberguer')
+        global = document.querySelector('#global')
+        let value = false
+        menuBtb.addEventListener('click', e => {
+            if (!value) {
+                menuBtb.classList.add('close')
+                global.classList.add('show')
+                value = true
+            } else {
+                menuBtb.classList.remove('close')
+                global.classList.remove('show')
+                value = false
+            }
+        })
+        list.forEach(item => {
+            item.addEventListener('click', () => {
+                menuBtb.classList.remove('close')
+                global.classList.remove('show')
             })
+
         })
     </script>
 </body>
