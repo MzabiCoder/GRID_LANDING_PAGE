@@ -14,6 +14,7 @@
 </head>
 
 <body id="home">
+
     <div id="global">
         <ul class="list">
             <li><a href="#main">Header</a> </li>
@@ -39,6 +40,9 @@
             </ul>
         </div>
     </nav>
+    <div id="loading">
+        <i class="fas fa-headphones"></i>
+    </div>
 
     <div class="section-a" id="main">
         <div class="container">
@@ -49,7 +53,8 @@
                 <a href="" class="btn">read nore</a>
 
             </div>
-            <img src="https://images.pexels.com/photos/3394652/pexels-photo-3394652.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            <img class="animated slideInRight"
+                src="https://images.pexels.com/photos/3394652/pexels-photo-3394652.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt="">
         </div>
     </div>
@@ -120,22 +125,22 @@
                 </ul>
             </div>
             <div>
-                <h3>blocg text</h3>
+                <h3>Company Info</h3>
                 <ul>
-                    <li><a href="#">Lorem ipsum dolor.</a></li>
-                    <li><a href="#">Lorem ipsum dolor.</a></li>
-                    <li><a href="#">Lorem ipsum dolor.</a></li>
-                    <li><a href="#">Lorem ipsum dolor.</a></li>
+                    <li><a href="#">All Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
                 </ul>
             </div>
             <div>
-                <h3>Suvbsribe</h3>
+                <h3>Subscribe</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, quibusdam.</p>
                 <form name="email-form" method="POST" data-netlify='true'>
                     <div class="email-form">
                         <span class="form-control-wrap">
                             <input type="email" name="email" id="email" size="40" class="form-control"
-                                placeholder="email">
+                                placeholder="email" value="Email">
                         </span>
                         <button type="submit" class="form-control submit">
                             <i class="fas fa-chevron-right"></i>
@@ -177,14 +182,13 @@
         });
     </script>
     <script>
-        // list = document.querySelectorAll('.nav li')
+        // document.querySelector('.navbar').style.position = 'relative'
+        setTimeout(() => {
+            document.querySelector('#loading').style.display = 'none'
+            document.querySelector('#loading').visiblity.display = 'hidden'
+            // document.querySelector('.navbar').style.position = 'fixed'
 
-        // list.forEach(el => {
-        //     el.addEventListener('click', e => {
-
-        //         console.log(e.target)
-        //     })
-        // })
+        }, 5000)
         list = document.querySelectorAll('.list li')
         menuBtb = document.querySelector('#hamberguer')
         global = document.querySelector('#global')

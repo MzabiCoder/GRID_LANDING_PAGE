@@ -208,7 +208,7 @@ img {
   top: 20px;
   right: 30px;
   cursor: pointer;
-  transition: all .8s ease-in-out;
+  transition: all .5s ease-in-out;
   z-index: 6;
   display: none; }
   #hamberguer div {
@@ -217,9 +217,13 @@ img {
     background: #585454;
     margin-bottom: .4rem; }
   #hamberguer.close {
-    transform: rotate(128deg); }
+    transform: rotate(180deg); }
+    #hamberguer.close div:nth-child(1) {
+      transform: rotate(45deg) translate(2px, 2px); }
     #hamberguer.close div:nth-child(2) {
       display: none; }
+    #hamberguer.close div:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -5px); }
 
 @media (max-width: 700px) {
   #hamberguer {
@@ -240,6 +244,8 @@ img {
       display: none; }
   .section-c .gallery {
     grid-template-columns: repeat(3, 1fr); }
+    .section-c .gallery a:nth-child(2) {
+      display: none; }
     .section-c .gallery a:first-child {
       grid-row: 1/1;
       grid-column: 1/1; }
@@ -268,6 +274,33 @@ img {
   animation-delay: 0s;
   animation-duration: 1s; }
 
+#loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0 !important;
+  background: black;
+  height: 110vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 100;
+  transition: all 1s ease-in-out; }
+  #loading i {
+    font-size: 6rem;
+    color: white;
+    animation: pro 5s infinite; }
+
+@keyframes pro {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
 #global {
   visibility: hidden;
   position: absolute;
@@ -276,15 +309,14 @@ img {
   right: 0;
   bottom: 0;
   background: black;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  z-index: 5;
-  transition: all 1s ease-in-out; }
+  z-index: 5; }
   #global .list {
     list-style: none; }
     #global .list li {
@@ -294,7 +326,6 @@ img {
         color: white;
         font-weight: bold;
         font-size: 2rem;
-        border-bottom: 1px solid white;
         letter-spacing: 5px;
         text-transform: capitalize;
         padding-bottom: .7rem;
@@ -303,7 +334,7 @@ img {
           background: white;
           color: black;
           cursor: pointer;
-          border-bottom: 1px solid black;
+          border-bottom: 1px solid black !important;
           padding: 1rem; }
   #global h1 {
     color: white; }
